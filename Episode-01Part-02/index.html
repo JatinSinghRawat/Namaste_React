@@ -1,0 +1,63 @@
+<!--Basic Hello World using react-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste react</title>
+</head>
+<body>
+    <div id="root">
+        <h1>Jatin is here! but class div</h1><!-- This tag will be replaced by the parent in root.render(parent)-->
+    </div>
+    <div id="check">
+        <h2>Jatin is here again!</h2><!-- This tag will not be replaced by the parent in root.render(parent) as it not 
+        id root.-->
+    </div>
+    <div class="root">
+        <h3>Class div</h3>
+    </div><!--It will work fine even if our class and id name similar-->
+    <script 
+    crossorigin 
+    src="https://unpkg.com/react@18/umd/react.development.js">
+    </script>
+    <script 
+    crossorigin 
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+    </script>
+    <!--React is also included in script Now let's write this code in new js file-->
+    <!-- <script>
+        const heading = React.createElement('h1',{},"Hello World from React!");
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(heading);
+    </script> -->
+    <script src="app.js"></script>
+    <!--We have used CDN links to get react in our page
+    What is CDN and why it is used-->
+<!-- A Content Delivery Network (CDN) is a distributed network of servers that work together to deliver content (like images, videos, and static files) to users faster and more efficiently.
+
+These servers, called edge servers, which are strategically positioned across various geographical locations.
+CDNs help improve the performance, reliability, and scalability of websites and web applications by caching content closer to users, reducing latency, and offloading traffic from origin servers.
+
+How does Content Delivery Network(CDN) Work?
+User sends a request for content (e.g., an image) from a website.
+CDN identifies the user's location and routes the request to the nearest edge server.
+If the content is cached at the edge server, it is delivered directly to the user.
+If the content is not cached, the edge server retrieves it from the origin server, caches it locally, and delivers it to the user.
+Cached content is stored at the edge server for future requests, optimizing performance and reducing latency. -->
+
+<!-- What is crossorigin?
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate 
+any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. 
+CORS also relies on a mechanism by which browsers make a "preflight" request to the server hosting the cross-origin 
+resource, in order to check that the server will permit the actual request. 
+In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.
+
+How crossorigin works?
+When you make a cross-origin request, this is the request-response process:
+
+The browser adds an origin header to the request with information about the current origin's protocol, host, and port
+The server checks the current origin header and responds with the requested data and an Access-Control-Allow-Origin header
+The browser sees the access control request headers and shares the returned data with the client application -->
+</body>
+</html>
