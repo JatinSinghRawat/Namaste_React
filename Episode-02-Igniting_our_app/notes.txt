@@ -1,0 +1,150 @@
+Before we need to make our code go into production, we need:
+    To bundle or compress our code.
+    remove the comments
+    remove the console.log statements
+    do code splitting, chunking, image optimization and minify the code.
+
+When we create an react app using 'npx create-react-app@latest', it give us a scapehold which is already in production
+but we weill need to learn how to make our own production ready app by not using existing framework.
+
+First, let's understand NPM
+npm doesn't officially understand for node package manager, you can check for it on official npm github page.
+npm manages the package and work as a package manager, but not stand for node package manager.
+npm is a standard repository for all the packages, all the libraries theat we need for our project.
+
+Whe we create a react app (usind npx create) it has automatically npm inside it that's why we don't need to configure it.
+
+We can add npm in our project by doing npm init, it will create a package.json file which is configuration of npm.
+
+Package.json vs package-lock.json
+
+packages are also called dependencies and npm manages those dependencies in package.json
+
+package.json tracks the version of package installed in our system. It can have ^(caret) or ~(tilde) symbol before package version.
+
+For ^1.2.3 means >=1.2.3<2.0.0(only minor and patch updates)
+For ~1.2.3 means >=1.2.3<1.3.0(only patch updates)
+These above are in package.json
+
+package.json is a configuration of npm that tracks version of package installed in our system.
+package-lock.json keeps record the exact version of the package.
+in package-lock.json
+1.2.3 specific version(no updates)
+
+So, this helps to install the same version of the package in production which are we using in local.
+package-lock.json also takes care of repeatable builds when someone use our project, they will get the exact same 
+version of every package.
+
+package.json is project's blueprint.
+package-lock.json is a snapshot of project's current dependency tree.
+
+npm install will look for package-lock.json and install packages according to it when we clone a github repo.
+
+npm - to install a package
+npx - to execute a package
+
+Types of dependencies
+1. Dependencies
+dependencies are libraries that your project needs in order to run in production. These are required for the core functionality of your application and must be installed for your application to work properly.
+
+How to Add Dependencies
+To add a package as a dependency, use the following command:
+
+npm install <package name>
+
+2. devDependencies
+In package.json file, there is an object called as dev Dependencies and it consists of all the packages that are used in the project in its development phase and not in the production or testing environment with its version number. So, whenever you want to install any library that is required only in your development phase then you can find it in the dev Dependencies object. 
+
+How to Add devDependencies
+To add a package as a development dependency, use the following command:
+
+npm install <package name> --save-dev
+
+3. peerDependencies
+In package.json file, there is an object called as peerDependencies and it consists of all the packages that are exactly required in the project or to the person who is downloading and the version numbers should also be the same. That is the reason they were named as peerDependencies. The best example is 'react' which is common in every project to run similarly. 
+
+How to Add peerDependencies
+You need to manually add peerDependencies in your package.json file. npm does not automatically install these dependencies.
+
+"peerDependencies": {
+    "react": "^16.8.0"
+}
+
+There are two more dependencies: optional and bundled
+
+First package we installed will be a bundler
+A bundler is a tool that takes your application’s various files — JavaScript, CSS, images, etc. — and combines them into a few bundles or a single bundle. This process is crucial for performance optimization, as it reduces the number of HTTP requests that the browser needs to make, resulting in faster load times.
+
+Key Features of a Bundler:
+Combining Files: Bundlers combine multiple files into a single or smaller number of files.
+Minification: They reduce file sizes by removing unnecessary spaces, comments, and shortening variable names.
+Code Splitting: Allows you to split your code into smaller bundles that can be loaded on-demand.
+Tree Shaking: Removes unused code from your bundles, making them smaller and more efficient.
+Hot Module Replacement (HMR): Enables live reloading of modules during development without a full page reload.
+
+Popular Bundlers for React
+Webpack: The most widely used bundler in the React ecosystem, offering extensive customization options.
+Parcel: Known for its zero-configuration setup, making it a great choice for beginners.
+Vite: A newer tool focused on speed, with a fast development server and optimized build process.
+
+We will use parcel here
+Parcel is a beast when we run the command it will create a devbuild which host our app on local server.
+Dev server
+Parcel includes a development server out of the box. Just run parcel index.html to get started.
+
+Hot reloading
+When you make a change, Parcel automatically updates your code in the browser – no page reload necessary!
+Parcel also integrates with React Fast Refresh and the Vue Hot Reloading API to automatically preserve your application state between updates. This gives you instant feedback as you make changes, without taking you out of context.
+
+Diagnostics
+If you make an error in your code or configuration, Parcel displays beautiful diagnostics in your terminal and in the browser.
+Every error includes a syntax highlighted code frame pointing to the exact location where the error occurred, along with hints about how to fix the issue.
+Many diagnostics even include a documentation link where you can learn more.
+
+Fast 
+Parcel builds your code in parallel using worker threads, utilizing all of the cores on your machine. Everything is cached, so you never build the same code twice. It's like using watch mode, but even when you restart Parcel!
+Parcel's JavaScript, CSS, HTML, and SVG compilers are written in Rust for maximum performance. These are 10-100x faster than other JavaScript-based tools!
+Parcel's JavaScript compiler is built on SWC, which handles transpiling JavaScript, JSX, and TypeScript. On top of SWC, Parcel implements dependency collection, bundling, scope hoisting, tree shaking, Node emulation, hot reloading, and more.
+Parcel's CSS transformer and minifier is built in Rust on top of the browser-grade CSS parser used in Firefox. It's over 100x faster than other JavaScript-based transformers and minifiers.
+Transpiling is the process of converting new ES6 to old version to be supported in multiple browsers.
+
+Multi-core
+Parcel is designed around a multi-core architecture that parallelizes work across all of your cores and takes full advantage of modern hardware.
+Transforming individual source files is parallelized, as well as packaging and optimizing output bundles. All of this is completely automatic and does not require any work by plugin authors or other tools that integrate with Parcel.
+
+Reliable caching
+Everything Parcel does is cached – transformation, dependency resolution, bundling, optimizing, and everything in between. This means the dev server restarts instantly, and the same code is never built twice.
+It get stored in .parcel-cache which will be created automatically when will build a server.
+Another folder create automatically is dist which store the minified versions of the html,css and js files which will be our final output files.
+
+Lazy dev builds
+In development, Parcel can defer building files until they are requested in the browser. This means you only need to wait for the page you're actually working on to build! If your project has many entries or code split points, this can massively reduce dev server startup time.
+
+Tree Shaking
+Parcel supports tree-shaking both ES modules and CommonJS out of the box! It statically analyzes the imports and exports of each module, and removes everything that isn't used.
+Tree shaking even works across dynamic import() boundaries, shared bundles, and even across languages! If you use CSS modules, unused classes will be removed automatically.
+
+Scope hoisting
+In production builds, Parcel concatenates modules into a single scope when possible, rather than wrapping each module in a separate function. This is called “scope hoisting”. This helps make minification more effective, and also improves runtime performance by making references between modules static rather than dynamic object lookups.
+
+To build a server using parcel first install using 
+npm install parcel
+
+npx parcel build index.html
+
+then run our app
+npx parcel index.html
+
+In the previous episode we use CDN links for react but here we will install and import react
+
+To install react run
+npm install react react-dom
+
+import react in app.js
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+But to use import we need to indclude type="module" in our script tag.
+<script type="module" src="./app.js"></script>
+
+
