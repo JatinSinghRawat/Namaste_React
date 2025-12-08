@@ -1,0 +1,148 @@
+body {
+  box-sizing: border-box;
+}
+
+.shimmer-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.shimmer-card {
+  margin-top: 30px;
+  width: 400px;
+  height: 300px;
+  background-color: #fff;
+  border: 1px solid black;
+}
+.shimmer-img {
+  margin: 5px;
+  width: 390px;
+  height: 180px;
+  background-color: #d2cece;
+}
+
+.name-rectangle {
+  width: 30%;
+  height: 20px;
+  background: #ccc;
+  margin-top: 10px;
+  margin-left: 5px;
+  border-radius: 4px;
+}
+
+.name-rectangle2 {
+  width: 60%;
+  height: 20px;
+  background: #ccc;
+  margin-top: 20px;
+  margin-left: 5px;
+  border-radius: 4px;
+}
+
+.ratingsandtime {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-rectangle3 {
+  margin: 5px;
+  width: 20%;
+  height: 20px;
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.login {
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.logo > img {
+  width: 100px;
+  height: 100px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links > li {
+  padding: 10px;
+  list-style-type: none;
+  font-size: 30px;
+}
+
+.filter{
+  display: flex;
+  gap:20px;
+}
+
+.search{
+  display: flex;
+  gap:5px;
+}
+
+.search-button{
+  background-color: #ebebeb;
+  padding: 2px;
+  border:1px solid black;
+  border-radius:1px;
+  cursor: pointer;
+}
+
+.filterres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterres input {
+  margin: 10px;
+}
+
+.filterres button {
+  cursor: pointer;
+}
+
+.res-logo {
+  width: 100%;
+  height: 200px;
+}
+
+.rating-time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.res-card {
+  width: 400px;
+  height: 350px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.res-card h4 {
+  margin: 4px 0; /* or even margin: 0; for no space at all */
+}
+
+.res-card:hover {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgb(231, 231, 231);
+  cursor: pointer;
+}
+
+.res-container {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
