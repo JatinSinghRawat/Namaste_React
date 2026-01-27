@@ -154,7 +154,8 @@ const Body = () => {
         onChange={(e)=>setUserName(e.target.value)}/>
         {/* <button onClick={()=>{setShow(!show)}}>
                     Toggle component
-                </button> to check for cleaup functions*/}
+                </button> to check for cleaup functions
+                */}
         <div className="border rounded-md px-2 mt-2 mb-2 ml-70">
           <button
             className="hover:cursor-pointer"

@@ -8,14 +8,14 @@ constructor(props){
     // console.log("Parent constructor");
 }
 
-componentDidMount(){
-    // console.log("Parent did mount");
-    this.timer = setInterval(()=>{
-        console.log("hello");
-    },1000);//This will run even if we are not on about page even if we go to Home page, contact page
-    //and when we come back to about from another page it will increase the times(twice,thrice and so on)
-    //so we need cleanup it in componentWillUnmount, so it will go away when we visit another page
-}
+// componentDidMount(){
+//     // console.log("Parent did mount");
+//     this.timer = setInterval(()=>{
+//         console.log("hello");
+//     },1000);//This will run even if we are not on about page even if we go to Home page, contact page
+//     //and when we come back to about from another page it will increase the times(twice,thrice and so on)
+//     //so we need cleanup it in componentWillUnmount, so it will go away when we visit another page
+// }
 
 componentWillUnmount(){
     clearInterval(this.timer);

@@ -1,7 +1,7 @@
 {
-  "name": "episode-08-Let's_Get_Classy",
+  "name": "episode-10-Styling_our_app",
   "version": "1.0.0",
-  "description": "New episode about class component",
+  "description": "Using tailwindcss to style the app",
   "license": "ISC",
   "author": "",
   "type": "commonjs",
