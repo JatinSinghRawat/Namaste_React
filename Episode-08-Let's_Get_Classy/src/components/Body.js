@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from "react";
 import Shimmer from "./Shimmer";
 import InfiniteScrollLoader from "./InfiniteScroll";
 import {Link} from 'react-router-dom'
-
+//Class based component
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState(resList);
   const [filteredList, setFilteredList] = useState(resList); //Akshay solution to make another state
