@@ -6,6 +6,7 @@ import InfiniteScrollLoader from "./InfiniteScroll";
 import {Link} from 'react-router-dom'
 import useOnlineStatus from "../utils/useOnlineStatus";
 
+//Added tailwind
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState(resList);
   const [filteredList, setFilteredList] = useState(resList); //Akshay solution to make another state
