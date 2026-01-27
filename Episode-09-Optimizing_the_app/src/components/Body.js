@@ -5,7 +5,7 @@ import Shimmer from "./Shimmer";
 import InfiniteScrollLoader from "./InfiniteScroll";
 import {Link} from 'react-router-dom'
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+//Optimizing the app
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState(resList);
   const [filteredList, setFilteredList] = useState(resList); //Akshay solution to make another state
