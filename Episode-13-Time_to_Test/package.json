@@ -1,0 +1,36 @@
+{
+  "name": "episode-13-time_to_test",
+  "version": "1.0.0",
+  "description": "Higher order components and more",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest",
+    "build": "parcel build index.html",
+    "start": "parcel index.html",
+    "test-watch":"jest --watch"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.28.5",
+    "@reduxjs/toolkit": "^2.11.2",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@testing-library/jest-dom": "^6.9.1",
+    "parcel": "^2.16.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0",
+    "react-router": "^6.30.2",
+    "react-router-dom": "^6.30.2",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
+    "babel-jest": "^30.3.0",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0"
+  }
+}
